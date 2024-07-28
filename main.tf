@@ -1,7 +1,9 @@
+data "yandex_client_config" "client" {}
+
 resource "yandex_ydb_database_dedicated" "dedicated_database" {
   count               = var.database_type == "dedicated" ? 1 : 0
   name                = var.name
-  folder_id           = var.folder_id
+  folder_id           = data.yandex_client_config.client.folder_id
   network_id          = var.network_id
   subnet_ids          = var.subnet_ids
   resource_preset_id  = var.resource_preset_id
@@ -28,6 +30,6 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
 resource "yandex_ydb_database_serverless" "serverless_database" {
   count               = var.database_type == "serverless" ? 1 : 0
   name                = var.name
-  folder_id           = var.folder_id
+  folder_id           = data.yandex_client_config.client.folder_id
   deletion_protection = var.deletion_protection
 }

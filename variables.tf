@@ -12,31 +12,27 @@ variable "name" {
 variable "folder_id" {
   description = "ID of the folder that the Yandex Database cluster belongs to"
   type        = string
-  default     = null
 }
 
 variable "network_id" {
   description = "ID of the network to attach the Yandex Database cluster to (only for dedicated)"
   type        = string
-  default     = null
 }
 
 variable "subnet_ids" {
   description = "List of subnet IDs to attach the Yandex Database cluster to (only for dedicated)"
   type        = list(string)
-  default     = null
 }
 
 variable "resource_preset_id" {
   description = "The Yandex Database cluster preset (only for dedicated)"
   type        = string
-  default     = null
 }
 
 variable "deletion_protection" {
   description = "Inhibits deletion of the database"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "fixed_scale_size" {
