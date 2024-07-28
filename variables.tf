@@ -9,11 +9,6 @@ variable "name" {
   type        = string
 }
 
-variable "folder_id" {
-  description = "ID of the folder that the Yandex Database cluster belongs to"
-  type        = string
-}
-
 variable "network_id" {
   description = "ID of the network to attach the Yandex Database cluster to (only for dedicated)"
   type        = string
