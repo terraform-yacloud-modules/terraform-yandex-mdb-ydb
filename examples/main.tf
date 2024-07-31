@@ -21,16 +21,9 @@ module "network" {
 module "ydb" {
   source = "../"
 
-  folder_id = data.yandex_client_config.client.folder_id
-  # Общие переменные
-  database_type       = "serverless" # dedicated или serverless
+  database_type       = "dedicated" # dedicated или serverless
   name                = "my-ydb-cluster"
-  deletion_protection = true
   network_id          = module.network.vpc_id
   subnet_ids          = [module.network.private_subnets_ids[0], module.network.private_subnets_ids[1], module.network.private_subnets_ids[2]]
   resource_preset_id  = "medium"
-  fixed_scale_size    = 1
-  storage_group_count = 1
-  storage_type_id     = "ssd"
-  region_id           = "ru-central1"
 }
