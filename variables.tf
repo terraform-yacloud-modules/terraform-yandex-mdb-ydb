@@ -1,12 +1,23 @@
 variable "database_type" {
   description = "Type of the Yandex Database to create (dedicated or serverless)"
   type        = string
-  default     = "dedicated"
 }
 
 variable "name" {
   description = "Name of the Yandex Database cluster"
   type        = string
+}
+
+variable "folder_id" {
+  description = <<EOF
+    (Optional) The ID of the Yandex Cloud Folder that the resources belongs to.
+
+    Allows to create bucket in different folder.
+    It will try to create bucket using IAM-token in provider config, not using access_key.
+    If omitted, folder_id specified in provider config and access_key is used.
+  EOF
+  type        = string
+  default     = null
 }
 
 variable "network_id" {
