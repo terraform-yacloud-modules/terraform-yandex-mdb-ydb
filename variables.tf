@@ -64,3 +64,15 @@ variable "region_id" {
   type        = string
   default     = "ru-central1"
 }
+
+variable "description" {
+  description = "A description for the Yandex Database cluster"
+  type        = string
+  default     = null
+}
+
+variable "labels" {
+  description = "A set of key/value label pairs to assign to the Yandex Database cluster"
+  type        = map(string)
+  default     = {}
+}

@@ -21,8 +21,18 @@ module "network" {
 module "ydb" {
   source = "../"
 
-  database_type       = "dedicated" # dedicated или serverless
+  # Тип базы данных: "dedicated" или "serverless"
+  database_type = "dedicated"
+
+  # Общие параметры
   name                = "my-ydb-cluster"
+  deletion_protection = false
+  description         = "My Yandex Database cluster"
+  labels = {
+    environment = "production"
+  }
+
+  # Параметры для dedicated базы данных
   network_id          = module.network.vpc_id
   subnet_ids          = [
     module.network.private_subnets_ids[0],
@@ -30,4 +40,7 @@ module "ydb" {
     module.network.private_subnets_ids[2]
   ]
   resource_preset_id  = "medium"
+  fixed_scale_size    = 3
+  storage_group_count = 2
+  storage_type_id     = "ssd"
 }

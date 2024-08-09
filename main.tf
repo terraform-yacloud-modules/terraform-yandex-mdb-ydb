@@ -7,6 +7,8 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
   subnet_ids          = var.subnet_ids
   resource_preset_id  = var.resource_preset_id
   deletion_protection = var.deletion_protection
+  description        = var.description
+  labels             = var.labels
 
   scale_policy {
     fixed_scale {
@@ -30,4 +32,6 @@ resource "yandex_ydb_database_serverless" "serverless_database" {
   count               = var.database_type == "serverless" ? 1 : 0
   name                = var.name
   deletion_protection = var.deletion_protection
+  description         = var.description
+  labels              = var.labels
 }
