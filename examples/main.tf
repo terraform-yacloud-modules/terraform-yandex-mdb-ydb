@@ -33,8 +33,8 @@ module "ydb" {
   }
 
   # Параметры для dedicated базы данных
-  network_id          = module.network.vpc_id
-  subnet_ids          = [
+  network_id = module.network.vpc_id
+  subnet_ids = [
     module.network.private_subnets_ids[0],
     module.network.private_subnets_ids[1],
     module.network.private_subnets_ids[2]
