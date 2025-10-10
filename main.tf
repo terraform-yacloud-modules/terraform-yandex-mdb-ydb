@@ -9,6 +9,7 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
   deletion_protection = var.deletion_protection
   description         = var.description
   labels              = var.labels
+  folder_id           = local.folder_id
 
   scale_policy {
     fixed_scale {
@@ -34,4 +35,5 @@ resource "yandex_ydb_database_serverless" "serverless_database" {
   deletion_protection = var.deletion_protection
   description         = var.description
   labels              = var.labels
+  folder_id           = local.folder_id
 }

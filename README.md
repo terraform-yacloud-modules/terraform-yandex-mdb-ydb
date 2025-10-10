@@ -10,7 +10,7 @@ to give users references for how to use the module(s) as well as testing/validat
 module. If contributing to the project, please be sure to make any appropriate updates to the relevant examples to allow
 maintainers to test your changes and to keep the examples up to date for users. Thank you!
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -44,7 +44,7 @@ No modules.
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Inhibits deletion of the database | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A description for the Yandex Database cluster | `string` | `null` | no |
 | <a name="input_fixed_scale_size"></a> [fixed\_scale\_size](#input\_fixed\_scale\_size) | Number of instances for the Yandex Database cluster (only for dedicated) | `number` | `1` | no |
-| <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | (Optional) The ID of the Yandex Cloud Folder that the resources belongs to.<br><br>    Allows to create bucket in different folder.<br>    It will try to create bucket using IAM-token in provider config, not using access\_key.<br>    If omitted, folder\_id specified in provider config and access\_key is used. | `string` | `null` | no |
+| <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | (Optional) The ID of the Yandex Cloud Folder that the resources belongs to.<br/><br/>    Allows to create bucket in different folder.<br/>    It will try to create bucket using IAM-token in provider config, not using access\_key.<br/>    If omitted, folder\_id specified in provider config and access\_key is used. | `string` | `null` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | A set of key/value label pairs to assign to the Yandex Database cluster | `map(string)` | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the Yandex Database cluster | `string` | n/a | yes |
 | <a name="input_network_id"></a> [network\_id](#input\_network\_id) | ID of the network to attach the Yandex Database cluster to (only for dedicated) | `string` | n/a | yes |
@@ -66,7 +66,7 @@ No modules.
 | <a name="output_database_path"></a> [database\_path](#output\_database\_path) | Full database path of the Yandex Database cluster. Useful for SDK configuration. |
 | <a name="output_database_status"></a> [database\_status](#output\_database\_status) | Status of the Yandex Database cluster. |
 | <a name="output_database_tls_enabled"></a> [database\_tls\_enabled](#output\_database\_tls\_enabled) | Whether TLS is enabled for the Yandex Database cluster. Useful for SDK configuration. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 
 ## License
 
