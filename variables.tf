@@ -76,3 +76,9 @@ variable "labels" {
   type        = map(string)
   default     = {}
 }
+
+variable "security_group_ids" {
+  description = "A list of security group IDs to attach to the dedicated YDB cluster"
+  type        = list(string)
+  default     = []
+}
