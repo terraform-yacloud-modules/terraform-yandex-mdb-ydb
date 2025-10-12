@@ -50,6 +50,7 @@ No modules.
 | <a name="input_network_id"></a> [network\_id](#input\_network\_id) | ID of the network to attach the Yandex Database cluster to (only for dedicated) | `string` | n/a | yes |
 | <a name="input_region_id"></a> [region\_id](#input\_region\_id) | Region ID for the Yandex Database cluster (only for dedicated) | `string` | `"ru-central1"` | no |
 | <a name="input_resource_preset_id"></a> [resource\_preset\_id](#input\_resource\_preset\_id) | The Yandex Database cluster preset (only for dedicated) | `string` | n/a | yes |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | A list of security group IDs to attach to the dedicated YDB cluster | `list(string)` | `[]` | no |
 | <a name="input_storage_group_count"></a> [storage\_group\_count](#input\_storage\_group\_count) | Amount of storage groups of selected type for the Yandex Database cluster (only for dedicated) | `number` | `1` | no |
 | <a name="input_storage_type_id"></a> [storage\_type\_id](#input\_storage\_type\_id) | Storage type ID for the Yandex Database cluster (only for dedicated) | `string` | `"ssd"` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnet IDs to attach the Yandex Database cluster to (only for dedicated) | `list(string)` | n/a | yes |

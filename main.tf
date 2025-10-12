@@ -10,6 +10,7 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
   description         = var.description
   labels              = var.labels
   folder_id           = local.folder_id
+  security_group_ids  = var.security_group_ids
 
   scale_policy {
     fixed_scale {
