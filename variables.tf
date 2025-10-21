@@ -82,3 +82,15 @@ variable "security_group_ids" {
   type        = list(string)
   default     = []
 }
+
+variable "assign_public_ips" {
+  description = "Whether public IP addresses should be assigned to the Yandex Database cluster"
+  type        = bool
+  default     = false
+}
+
+variable "scale_policy" {
+  description = "Scaling policy for the Yandex Database cluster. Can be either `fixed_scale` or `auto_scale`"
+  type        = any
+  default     = null
+}
