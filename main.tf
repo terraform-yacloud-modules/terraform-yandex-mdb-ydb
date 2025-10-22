@@ -11,10 +11,25 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
   labels              = var.labels
   folder_id           = local.folder_id
   security_group_ids  = var.security_group_ids
+  assign_public_ips   = var.assign_public_ips
 
   scale_policy {
-    fixed_scale {
-      size = var.fixed_scale_size
+    dynamic "fixed_scale" {
+      for_each = try(local.scale_policy_config.fixed_scale, null) != null ? [local.scale_policy_config.fixed_scale] : []
+      content {
+        size = fixed_scale.value.size
+      }
+    }
+
+    dynamic "auto_scale" {
+      for_each = try(local.scale_policy_config.auto_scale, null) != null ? [local.scale_policy_config.auto_scale] : []
+      content {
+        min_size = auto_scale.value.min_size
+        max_size = auto_scale.value.max_size
+        target_tracking {
+            cpu_utilization_percent = auto_scale.value.target_tracking.cpu_utilization_percent
+        }
+      }
     }
   }
 
