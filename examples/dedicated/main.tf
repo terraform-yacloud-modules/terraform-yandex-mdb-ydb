@@ -19,7 +19,7 @@ module "network" {
 }
 
 module "ydb" {
-  source = "../.."
+  source = "../../"
 
   # Тип базы данных: "dedicated" или "serverless"
   database_type = "dedicated"

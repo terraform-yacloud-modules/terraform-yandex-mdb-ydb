@@ -27,7 +27,7 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
         min_size = auto_scale.value.min_size
         max_size = auto_scale.value.max_size
         target_tracking {
-            cpu_utilization_percent = auto_scale.value.target_tracking.cpu_utilization_percent
+          cpu_utilization_percent = auto_scale.value.target_tracking.cpu_utilization_percent
         }
       }
     }
