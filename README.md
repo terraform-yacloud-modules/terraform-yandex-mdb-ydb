@@ -40,6 +40,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_assign_public_ips"></a> [assign\_public\_ips](#input\_assign\_public\_ips) | Whether public IP addresses should be assigned to the Yandex Database cluster | `bool` | `false` | no |
 | <a name="input_database_type"></a> [database\_type](#input\_database\_type) | Type of the Yandex Database to create (dedicated or serverless) | `string` | n/a | yes |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Inhibits deletion of the database | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A description for the Yandex Database cluster | `string` | `null` | no |
@@ -50,6 +51,7 @@ No modules.
 | <a name="input_network_id"></a> [network\_id](#input\_network\_id) | ID of the network to attach the Yandex Database cluster to (only for dedicated) | `string` | n/a | yes |
 | <a name="input_region_id"></a> [region\_id](#input\_region\_id) | Region ID for the Yandex Database cluster (only for dedicated) | `string` | `"ru-central1"` | no |
 | <a name="input_resource_preset_id"></a> [resource\_preset\_id](#input\_resource\_preset\_id) | The Yandex Database cluster preset (only for dedicated) | `string` | n/a | yes |
+| <a name="input_scale_policy"></a> [scale\_policy](#input\_scale\_policy) | Scaling policy for the Yandex Database cluster. Can be either `fixed_scale` or `auto_scale` | `any` | `null` | no |
 | <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | A list of security group IDs to attach to the dedicated YDB cluster | `list(string)` | `[]` | no |
 | <a name="input_storage_group_count"></a> [storage\_group\_count](#input\_storage\_group\_count) | Amount of storage groups of selected type for the Yandex Database cluster (only for dedicated) | `number` | `1` | no |
 | <a name="input_storage_type_id"></a> [storage\_type\_id](#input\_storage\_type\_id) | Storage type ID for the Yandex Database cluster (only for dedicated) | `string` | `"ssd"` | no |
