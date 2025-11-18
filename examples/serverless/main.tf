@@ -32,8 +32,4 @@ module "ydb" {
     environment = "production"
   }
 
-  # Параметры для serverless (другие параметры игнорируются для serverless)
-  network_id         = null
-  subnet_ids         = []
-  resource_preset_id = null
 }
