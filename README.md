@@ -48,14 +48,14 @@ No modules.
 | <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | (Optional) The ID of the Yandex Cloud Folder that the resources belongs to.<br/><br/>    Allows to create bucket in different folder.<br/>    It will try to create bucket using IAM-token in provider config, not using access\_key.<br/>    If omitted, folder\_id specified in provider config and access\_key is used. | `string` | `null` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | A set of key/value label pairs to assign to the Yandex Database cluster | `map(string)` | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the Yandex Database cluster | `string` | n/a | yes |
-| <a name="input_network_id"></a> [network\_id](#input\_network\_id) | ID of the network to attach the Yandex Database cluster to (only for dedicated) | `string` | n/a | yes |
+| <a name="input_network_id"></a> [network\_id](#input\_network\_id) | ID of the network to attach the Yandex Database cluster to (only for dedicated) | `string` | `null` | no |
 | <a name="input_region_id"></a> [region\_id](#input\_region\_id) | Region ID for the Yandex Database cluster (only for dedicated) | `string` | `"ru-central1"` | no |
-| <a name="input_resource_preset_id"></a> [resource\_preset\_id](#input\_resource\_preset\_id) | The Yandex Database cluster preset (only for dedicated) | `string` | n/a | yes |
+| <a name="input_resource_preset_id"></a> [resource\_preset\_id](#input\_resource\_preset\_id) | The Yandex Database cluster preset (only for dedicated) | `string` | `null` | no |
 | <a name="input_scale_policy"></a> [scale\_policy](#input\_scale\_policy) | Scaling policy for the Yandex Database cluster. Can be either `fixed_scale` or `auto_scale` | `any` | `null` | no |
 | <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | A list of security group IDs to attach to the dedicated YDB cluster | `list(string)` | `[]` | no |
 | <a name="input_storage_group_count"></a> [storage\_group\_count](#input\_storage\_group\_count) | Amount of storage groups of selected type for the Yandex Database cluster (only for dedicated) | `number` | `1` | no |
 | <a name="input_storage_type_id"></a> [storage\_type\_id](#input\_storage\_type\_id) | Storage type ID for the Yandex Database cluster (only for dedicated) | `string` | `"ssd"` | no |
-| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnet IDs to attach the Yandex Database cluster to (only for dedicated) | `list(string)` | n/a | yes |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnet IDs to attach the Yandex Database cluster to (only for dedicated) | `list(string)` | `null` | no |
 
 ## Outputs
 
