@@ -44,7 +44,6 @@ module "ydb" {
   storage_group_count = 2
   storage_type_id     = "ssd"
 
-  # Новые параметры согласно документации
   location_id        = "ru-central1"
   sleep_after        = 300
   security_group_ids = []
