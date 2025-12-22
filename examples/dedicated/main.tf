@@ -43,4 +43,10 @@ module "ydb" {
   fixed_scale_size    = 3
   storage_group_count = 2
   storage_type_id     = "ssd"
+
+  location_id        = "ru-central1"
+  sleep_after        = 300
+  security_group_ids = []
+  assign_public_ips  = false
+  timeouts           = "30m"
 }

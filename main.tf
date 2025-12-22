@@ -12,6 +12,8 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
   folder_id           = local.folder_id
   security_group_ids  = var.security_group_ids
   assign_public_ips   = var.assign_public_ips
+  location_id         = var.location_id
+  sleep_after         = var.sleep_after
 
   scale_policy {
     dynamic "fixed_scale" {
@@ -38,9 +40,19 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
     storage_type_id = var.storage_type_id
   }
 
-  location {
-    region {
-      id = var.region_id
+  dynamic "location" {
+    for_each = var.location_id == null && var.region_id != null ? [1] : []
+    content {
+      region {
+        id = var.region_id
+      }
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts != null ? [var.timeouts] : []
+    content {
+      default = timeouts.value
     }
   }
 }

@@ -27,8 +27,8 @@ variable "network_id" {
 }
 
 variable "subnet_ids" {
-  description = "List of subnet IDs to attach the Yandex Database cluster to (only for dedicated)"
-  type        = list(string)
+  description = "Set of subnet IDs to attach the Yandex Database cluster to (only for dedicated)"
+  type        = set(string)
   default     = null
 }
 
@@ -68,6 +68,12 @@ variable "region_id" {
   default     = "ru-central1"
 }
 
+variable "location_id" {
+  description = "Location ID for the Yandex Database cluster (alternative to region block)"
+  type        = string
+  default     = null
+}
+
 variable "description" {
   description = "A description for the Yandex Database cluster"
   type        = string
@@ -81,8 +87,8 @@ variable "labels" {
 }
 
 variable "security_group_ids" {
-  description = "A list of security group IDs to attach to the dedicated YDB cluster"
-  type        = list(string)
+  description = "A set of security group IDs to attach to the dedicated YDB cluster"
+  type        = set(string)
   default     = []
 }
 
@@ -92,8 +98,20 @@ variable "assign_public_ips" {
   default     = false
 }
 
+variable "sleep_after" {
+  description = "Delay after creation before proceeding with further operations"
+  type        = number
+  default     = null
+}
+
 variable "scale_policy" {
   description = "Scaling policy for the Yandex Database cluster. Can be either `fixed_scale` or `auto_scale`"
   type        = any
+  default     = null
+}
+
+variable "timeouts" {
+  description = "Timeout configuration for create, update, and delete operations"
+  type        = string
   default     = null
 }
