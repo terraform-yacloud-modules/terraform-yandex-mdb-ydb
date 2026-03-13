@@ -69,7 +69,7 @@ variable "region_id" {
 }
 
 variable "location_id" {
-  description = "Location ID for the Yandex Database cluster (alternative to region block)"
+  description = "Location ID for the Yandex Database (e.g. ru-central1). For serverless, recommended for create/update."
   type        = string
   default     = null
 }
@@ -111,7 +111,20 @@ variable "scale_policy" {
 }
 
 variable "timeouts" {
-  description = "Timeout configuration for create, update, and delete operations"
+  description = "Default timeout for resource operations (e.g. \"30m\" for dedicated, \"10m\" for serverless)"
   type        = string
   default     = null
+}
+
+# --- Serverless-only ---
+
+variable "serverless_database" {
+  description = "Serverless database limits and throttling (only for database_type = \"serverless\")"
+  type = object({
+    throttling_rcu_limit        = optional(number)
+    storage_size_limit          = optional(number)
+    enable_throttling_rcu_limit = optional(bool)
+    provisioned_rcu_limit       = optional(number)
+  })
+  default = null
 }
