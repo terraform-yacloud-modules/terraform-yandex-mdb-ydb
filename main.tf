@@ -60,8 +60,27 @@ resource "yandex_ydb_database_dedicated" "dedicated_database" {
 resource "yandex_ydb_database_serverless" "serverless_database" {
   count               = var.database_type == "serverless" ? 1 : 0
   name                = var.name
+  folder_id           = local.folder_id
+  location_id         = var.location_id
   deletion_protection = var.deletion_protection
   description         = var.description
   labels              = var.labels
-  folder_id           = local.folder_id
+  sleep_after         = var.sleep_after
+
+  dynamic "serverless_database" {
+    for_each = var.serverless_database != null ? [var.serverless_database] : []
+    content {
+      throttling_rcu_limit        = serverless_database.value.throttling_rcu_limit
+      storage_size_limit          = serverless_database.value.storage_size_limit
+      enable_throttling_rcu_limit = serverless_database.value.enable_throttling_rcu_limit
+      provisioned_rcu_limit       = serverless_database.value.provisioned_rcu_limit
+    }
+  }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts != null ? [var.timeouts] : []
+    content {
+      default = timeouts.value
+    }
+  }
 }
