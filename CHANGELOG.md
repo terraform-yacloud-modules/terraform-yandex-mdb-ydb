@@ -1,3 +1,7 @@
+## v0.59.0 - 2026-03-23
+### Chores
+- dfbe6ff chore(deps): bump actions/cache from 5.0.3 to 5.0.4 ([#60](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/60))
+
 ## v0.58.0 - 2026-03-14
 ### Miscellaneous
 - a36a2d8 serverless YDB: add location_id, sleep_after, serverless_database and timeouts ([#59](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/59))
