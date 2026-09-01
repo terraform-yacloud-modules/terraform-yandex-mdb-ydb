@@ -1,3 +1,10 @@
+## v0.68.0 - 2026-09-01
+### Bug Fixes
+- cfedade fix: передача folder_id в примере с приоритетом tfvars над YC_FOLDER_ID
+
+### Miscellaneous
+- 59e3353 Merge pull request [#68](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/68) from terraform-yacloud-modules/feature/add-folder-id-tfvars
+
 ## v0.67.0 - 2026-08-31
 ### Chores
 - 6583d8c chore(deps): bump bridgecrewio/checkov-action ([#69](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/69))
