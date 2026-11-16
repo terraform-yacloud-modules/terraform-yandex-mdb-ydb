@@ -1,3 +1,7 @@
+## v0.79.0 - 2026-11-16
+### Chores
+- b65ef04 chore(deps): bump bridgecrewio/checkov-action ([#80](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/80))
+
 ## v0.78.0 - 2026-11-10
 ### Bug Fixes
 - b310350 fix(examples): use available availability zones in dedicated example ([#78](https://github.com/terraform-yacloud-modules/terraform-yandex-mdb-ydb/pull/78))
